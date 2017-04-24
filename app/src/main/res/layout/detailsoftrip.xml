@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        layout="@layout/toolbar" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ProgressBar
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/load"
+            android:visibility="visible" />
+        <!-- Name category -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:paddingBottom="10dp"
+            android:orientation="horizontal">
+            <!-- Name Label -->
+            <TextView
+                android:text="@string/trip_name"
+                android:layout_width="wrap_content"
+                android:layout_weight=".25"
+                android:textColor="#000"
+                android:layout_height="wrap_content"
+                />
+                <!-- Name field -->
+
+            <TextView
+                    android:id="@+id/text_name"
+                    android:layout_weight="1.75"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!--  Location Label -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:paddingBottom="10dp"
+            android:orientation="horizontal">
+
+            <!-- Date Label -->
+            <TextView
+                android:text="@string/date"
+                android:layout_width="wrap_content"
+                android:layout_weight=".25"
+                android:layout_height="wrap_content"
+                android:textColor="#000"/>
+            <!-- Date field -->
+            <TextView
+                android:id="@+id/text_date"
+                android:layout_weight="1.75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:paddingBottom="10dp"
+            android:orientation="horizontal">
+
+            <!-- Location Label -->
+            <TextView
+                android:text="@string/start_point"
+                android:layout_width="wrap_content"
+                android:layout_weight=".25"
+                android:layout_height="wrap_content"
+                android:textColor="#000"/>
+            <!-- Location field -->
+            <TextView
+                android:id="@+id/text_startPoint"
+                android:layout_weight="1.75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:paddingBottom="10dp"
+            android:orientation="horizontal">
+
+            <!-- Location Label -->
+            <TextView
+                android:text="Destination"
+                android:layout_width="wrap_content"
+                android:layout_weight=".25"
+                android:layout_height="wrap_content"
+                android:textColor="#000"/>
+            <!-- Location field -->
+            <TextView
+                android:id="@+id/text_destination"
+                android:layout_weight="1.75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:paddingBottom="10dp"
+            android:orientation="horizontal">
+
+            <!-- Location Label -->
+            <TextView
+                android:text="ReminderTime"
+                android:layout_width="wrap_content"
+                android:layout_weight=".25"
+                android:layout_height="wrap_content"
+                android:textColor="#000"/>
+            <!-- Location field -->
+            <TextView
+                android:id="@+id/text_remindertime"
+                android:layout_weight="1.75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:paddingBottom="10dp"
+            android:orientation="horizontal">
+
+            <!-- Location Label -->
+            <TextView
+                android:text="Duration"
+                android:layout_width="wrap_content"
+                android:layout_weight=".25"
+                android:layout_height="wrap_content"
+                android:textColor="#000"/>
+            <!-- Location field -->
+            <TextView
+                android:id="@+id/text_duration"
+                android:layout_weight="1.75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:paddingBottom="10dp"
+            android:orientation="horizontal">
+
+            <!-- Location Label -->
+            <TextView
+                android:text="Average Speed"
+                android:layout_width="wrap_content"
+                android:layout_weight=".25"
+                android:layout_height="wrap_content"
+                android:textColor="#000"/>
+            <!-- Location field -->
+            <TextView
+                android:id="@+id/text_speed"
+                android:layout_weight="1.75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:paddingBottom="10dp"
+            android:orientation="vertical">
+
+            <!-- Location Label -->
+            <TextView
+                android:text="@string/note"
+                android:layout_width="wrap_content"
+                android:layout_weight=".25"
+                android:layout_height="wrap_content"
+                android:textColor="#000"/>
+            <!-- Location field -->
+            <TextView
+                android:id="@+id/text_note"
+                android:layout_weight="1.75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:paddingBottom="10dp"
+            android:orientation="horizontal">
+
+            <!-- Location Label -->
+            <TextView
+                android:text="With"
+                android:layout_width="wrap_content"
+                android:layout_weight=".25"
+                android:layout_height="wrap_content"
+                android:textColor="#000"/>
+            <!-- Location field -->
+            <TextView
+                android:id="@+id/text_with"
+                android:layout_weight="1.75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <!-- Location Label -->
+            <TextView
+                android:text="Trip Type"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:textColor="#000"/>
+            <!-- Location field -->
+            <TextView
+                android:id="@+id/triptype"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <RadioGroup
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <RadioButton
+                android:text="Upcomming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/upcomming" />
+            <RadioButton
+                android:text="Done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/done" />
+            <RadioButton
+                android:text="Cancelled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cancelled" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/linearcontianimg"
+            android:weightSum="4"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/map"
+                android:layout_weight="1"
+                android:src="@drawable/map"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/editicon"
+                android:layout_height="match_parent"
+                android:src="@drawable/editicon"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/deleteicon"
+                android:src="@drawable/deleteicon"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/reminderoff"
+                android:src="@mipmap/ic_alarm_off_black_24dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

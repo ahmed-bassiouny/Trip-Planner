@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_reminder_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context="com.example.ahmed.androidproject.ReminderActivityDialog">
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/remindertripnote" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:text="Cancel"
+            android:layout_width="wrap_content"
+            android:textColor="#fff"
+            android:background="@color/colorPrimary"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:id="@+id/remindercancel"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="Later"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:layout_margin="5dp"
+            android:background="@color/colorPrimary"
+            android:id="@+id/reminderlater"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="Start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:layout_margin="5dp"
+            android:background="@color/colorPrimary"
+            android:id="@+id/reminderstart"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>

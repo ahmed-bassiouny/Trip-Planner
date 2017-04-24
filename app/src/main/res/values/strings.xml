@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">AndroidProject</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="confirmpassword">Confirm Password</string>
+    <string name="email">E-mail</string>
+    <string name="signin">Signin</string>
+    <string name="register">Register</string>
+    <string name="rememberme">Remember me</string>
+    <string name="continu">Continue</string>
+    <string name="registernow"> New User ... ? Register Now</string>
+
+    <string name="trip_name">Name</string>
+    <string name="name_hint">TripName</string>
+    <string name="start_point">Start</string>
+    <string name="end_point">End</string>
+    <string name="time">Time</string>
+    <string name="timehint">StartTime</string>
+    <string name="datehint">StartDate</string>
+    <string name="date">Date</string>
+    <string name="tripType">Status</string>
+    <string name="note">Note</string>
+    <string name="notehint">YourHint</string>
+    <string name="one_direction">onedirection</string>
+    <string name="round">roundtrip</string>
+    <string name="addtrip">AddTrip</string>
+    <string name="tripStatus">Status</string>
+    <string name="doneckeckbox">Done</string>
+    <string name="tripDetails">Details</string>
+
+</resources>

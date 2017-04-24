@@ -1,0 +1,164 @@
+Debuger.LOGI(".......................................");
+        for (Trip t :queries.getTrips()){
+            Debuger.LOGI(t.id+"");
+            Debuger.LOGI("......");
+            Debuger.LOGI(t.name);
+            Debuger.LOGI("......");
+            Debuger.LOGI(t.startTime);
+            Debuger.LOGI("......");
+            Debuger.LOGI(t.endTime);
+            Debuger.LOGI("......");
+            Debuger.LOGI(t.startPoint.lattitude+"");
+            Debuger.LOGI("......");
+            Debuger.LOGI(t.startPoint.longtitude+"");
+            Debuger.LOGI("......");
+            Debuger.LOGI(t.endPoint.lattitude+"");
+            Debuger.LOGI("......");
+            Debuger.LOGI(t.endPoint.longtitude+"");
+            Debuger.LOGI("......");
+            Debuger.LOGI(t.note);
+            Debuger.LOGI("......");
+            Debuger.LOGI(t.tripType+" = tripType");
+            Debuger.LOGI("......");
+            Debuger.LOGI(t.roundType+"= roundtype");
+            Debuger.LOGI("......");
+            Debuger.LOGI(t.with+" = with");
+            Debuger.LOGI("......");
+            Debuger.LOGI(t.reminderTime+"= reminderTime");
+            Debuger.LOGI("......");
+
+               <DatePicker
+                            android:id="@+id/datePicker"
+                            android:calendarViewShown="false"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+                        </DatePicker>
+                        <TimePicker
+                            android:id="@+id/timePicker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+                        </TimePicker>
+
+
+        // Set the integer mSelected to the constant values
+        /*
+        typeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selection = (String) parent.getItemAtPosition(position);
+                if (!TextUtils.isEmpty(selection)) {
+                    if (selection.equals(getString(R.string.one_direction))) {
+                        mType = TripType.OneDirection; // one direction
+                    } else if (selection.equals(getString(R.string.round))) {
+                        mType = TripType.RoundTrip; // round trip
+                    }
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+
+        });*/
+
+
+
+        class GetDuration extends AsyncTask<String, Void, String> {
+                @Override
+                protected void onPreExecute() {
+                    super.onPreExecute();
+                    dialog = ProgressDialog.show(SaveTrip.this, "",
+                            "Loading. Please wait...", true);
+                }
+
+                @Override
+                protected String doInBackground(String... params) {
+                    String result ="";
+                    try {
+                        result = dowload(params[0]);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    return result;
+                }
+
+                protected void onPostExecute(String response) {
+                    String [] time =new String[]{};
+                    try {
+                        JSONObject object = new JSONObject(response);
+                        JSONArray getrow=object.getJSONArray("rows");
+                        JSONObject row = getrow.getJSONObject(0);
+                        JSONArray getelement=row.getJSONArray("elements");
+                        JSONObject element = getelement.getJSONObject(0);
+                        if(element.getString("status").equals("OK")) {
+                            time= element.getJSONObject("duration").getString("text").split(" ");
+                        }
+                        else{
+                            time=new String[0];
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    if(time.length!=0){
+                    for(int i=0;i<time.length;i+=2 ){
+                        switch (time[i+1]){
+                            case "days":
+                                date.add(Calendar.DAY_OF_MONTH,Integer.parseInt(time[i]));
+                                break;
+                            case "hours":
+                                date.add(Calendar.HOUR_OF_DAY,Integer.parseInt(time[i]));
+                                break;
+                            case "min":
+                                date.add(Calendar.MINUTE,Integer.parseInt(time[i]));
+                                break;
+                        }
+                    }
+                    }
+                    Calendar now = Calendar.getInstance();
+                    Debuger.LOGI("Now is "+now.getTime());
+                    Debuger.LOGI("date is "+date.getTime());
+                    Debuger.LOGI("Date is "+date.after(now));
+                    dialog.dismiss();
+                }
+
+                public String dowload(String urlstring) throws IOException {
+                    String response = null;
+                    try {
+                        URL url = new URL(urlstring);
+                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                        conn.setRequestMethod("GET");
+                        InputStream in = new BufferedInputStream(conn.getInputStream());
+                        response = convertStreamToString(in);
+                    } catch (MalformedURLException e) {
+                        Debuger.LOGI("MalformedURLException: " + e.getMessage());
+                    } catch (ProtocolException e) {
+                        Debuger.LOGI("ProtocolException: " + e.getMessage());
+                    } catch (IOException e) {
+                        Debuger.LOGI("IOException: " + e.getMessage());
+                    } catch (Exception e) {
+                        Debuger.LOGI("Exception: " + e.getMessage());
+                    }
+
+                    return response;
+                }
+                private String convertStreamToString(InputStream is) {
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                    StringBuilder sb = new StringBuilder();
+                    String line;
+                    try {
+                        while ((line = reader.readLine()) != null) {
+                            sb.append(line).append('\n');
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } finally {
+                        try {
+                            is.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    return sb.toString();
+                }
+            }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/homeN"
+        android:title="Home"
+        android:icon="@drawable/ic_account_circle_black_24dp">
+    </item>
+    <item
+        android:id="@+id/report"
+        android:title="Report"
+        android:icon="@mipmap/ic_menu_black_24dp">
+    </item>
+    <item
+        android:id="@+id/signout"
+        android:title="Signout"
+        android:icon="@mipmap/ic_subdirectory_arrow_left_black_24dp">
+    </item>
+
+    <item android:title="Social">
+        <menu>
+            <item android:title="Facebook"></item>
+            <item android:title="Twitter"></item>
+        </menu>
+    </item>
+</menu>
